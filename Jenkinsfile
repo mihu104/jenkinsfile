@@ -5,13 +5,14 @@ stage('Deploy') {
  steps {
 			  script {
   input "Deploy?"
-  }
-  }
   milestone()
   lock('Deployment') {
-    node ('maven_slave'){
+    node ('maven-slave'){
       echo "Deploying"
     }
+  }
+  }
+  
   }
 }
 }
