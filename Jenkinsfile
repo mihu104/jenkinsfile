@@ -1,5 +1,6 @@
 pipeline{
 agent {label 'maven-slave'} {
+stages {
 stage('Deploy') {
   input "Deploy?"
   milestone()
@@ -8,6 +9,7 @@ stage('Deploy') {
       echo "Deploying"
     }
   }
+}
 }
 }
 }
