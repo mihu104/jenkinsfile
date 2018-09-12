@@ -1,5 +1,5 @@
 pipeline{
-agent {label 'maven-slave'} {
+agent {label 'maven-slave'} 
 stages {
 stage('Deploy') {
   input "Deploy?"
@@ -11,5 +11,5 @@ stage('Deploy') {
   }
 }
 }
-}
+
 }
