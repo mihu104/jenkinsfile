@@ -1,17 +1,18 @@
 pipeline{
-agent {label 'maven-slave'} 
+agent {any} 
 stages {
 stage('Deploy') {
  steps {
 			  script {
   input "Deploy?"
+   }
   milestone()
   lock('Deployment') {
-    node ('maven-slave'){
+    node (any){
       echo "Deploying"
     }
   }
-  }
+ 
   
   }
 }
